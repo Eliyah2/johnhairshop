@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John's Hairshop – Kapper in Venlo en Blerick</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4E7E1;--surface:#FAF2EE;--ink:#33221A;--muted:#6B5347;--accent:#4A3228;--accent-ink:#FAF2EE;
+  --taupe:#B39B8C;--line:#DFC9BF;--band:#3A2820;--band-ink:#F4E7E1;--band-muted:#CDB5A8;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#1E1511;--surface:#2A1D17;--ink:#F0E1DA;--muted:#C4AB9E;--accent:#F0E1DA;--accent-ink:#1E1511;--line:#43322A;--band:#2A1D17}
+}
+:root[data-theme="dark"]{--bg:#1E1511;--surface:#2A1D17;--ink:#F0E1DA;--muted:#C4AB9E;--accent:#F0E1DA;--accent-ink:#1E1511;--line:#43322A;--band:#2A1D17}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:300;font-size:18px;line-height:1.7}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--taupe);outline-offset:4px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.serif{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif}
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding-top:env(safe-area-inset-top,0px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo{font-weight:500;letter-spacing:.42em;text-decoration:none;font-size:14px;white-space:nowrap}
+.logo b{color:var(--taupe);font-weight:600}
+nav{display:flex;gap:36px;align-items:center}
+nav a{text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.06em}
+nav a:not(.btn):hover{color:var(--taupe)}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:15px 34px;border-radius:999px;font-weight:400;letter-spacing:.06em;text-decoration:none;font-size:15px;transition:background .25s,color .25s}
+nav .btn{padding:11px 24px;font-size:14px}
+.btn:hover{background:var(--taupe);color:#2A1D17}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--taupe)}
+.btn.ghost:hover{background:var(--taupe);color:#2A1D17}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center;padding:56px 0 120px}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:clamp(46px,7.4vw,100px);line-height:.98;letter-spacing:-.015em;margin:0 0 28px}
+h1 em{font-style:italic;color:var(--taupe)}
+.lead{font-size:20px;color:var(--muted);max-width:30em;margin:0 0 40px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.arch{position:relative;aspect-ratio:3/4;border-radius:999px 999px 0 0;background:linear-gradient(170deg,var(--taupe) 0%,var(--line) 70%,var(--bg) 100%);display:grid;place-items:end center;padding-bottom:28px;color:var(--accent);font-size:13px;letter-spacing:.08em}
+.halo{position:absolute;left:-56px;bottom:56px;width:188px;height:188px;background:var(--bg);border-radius:50%;display:grid;place-items:center;text-align:center}
+.halo svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.halo circle{fill:none;stroke:var(--taupe);stroke-width:2.5;stroke-dasharray:289;stroke-dashoffset:289;animation:draw 1.8s .3s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.halo p{margin:0;position:relative;line-height:1.25}
+.halo .s{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;display:block}
+.halo .t{font-size:13px;color:var(--muted);display:block;margin-top:4px;padding:0 20px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--taupe);margin-right:8px;vertical-align:middle}
+.dot.on{background:#6FA77B}
+section{padding:120px 0}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-.01em;margin:0 0 32px}
+.two{display:grid;grid-template-columns:.9fr 1.1fr;gap:96px;align-items:center}
+.two p{max-width:34em;margin:0 0 18px;color:var(--muted)}
+.vals{display:flex;gap:40px;flex-wrap:wrap;margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
+.vals span{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-style:italic}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:72px;margin-top:56px}
+.menu h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:32px;margin:0 0 20px;padding-bottom:14px;border-bottom:1px solid var(--taupe)}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu li{display:flex;align-items:baseline;gap:10px;padding:9px 0;font-size:17px}
+.menu li i{flex:1;border-bottom:1px dotted var(--taupe);transform:translateY(-4px)}
+.menu li b{font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+.note{margin-top:56px;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:28px}
+.band{background:var(--band);color:var(--band-ink)}
+.band p{color:var(--band-muted)}
+.band .btn{background:var(--band-ink);color:#2A1D17}
+.band .btn:hover{background:var(--taupe)}
+.keune{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(64px,12vw,160px);line-height:.9;letter-spacing:.04em;color:var(--taupe);opacity:.9;margin:0}
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:72px}
+.contact h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:30px;margin:0 0 16px}
+.contact p{margin:0 0 6px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+td{padding:7px 0;color:var(--muted)}
+td:last-child{text-align:right}
+tr.today td{color:var(--ink);font-weight:500}
+footer{border-top:1px solid var(--line);padding:56px 0;text-align:center;color:var(--muted);font-size:15px}
+footer .logo{display:block;color:var(--ink);margin-bottom:14px}
+@media (max-width:860px){
+  nav a:not(.btn){display:none}
+  header .wrap{height:72px}
+  .hero,.two,.contact{grid-template-columns:1fr;gap:48px}
+  .hero{padding:24px 0 80px}
+  .arch{max-width:340px;margin:0 auto;width:100%}
+  .halo{left:-14px;bottom:36px;width:150px;height:150px}
+  .halo .s{font-size:23px}
+  section{padding:80px 0}
+  .menu{grid-template-columns:1fr;gap:48px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.halo circle{animation:none;stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">J<b>O</b>HNS HAIRSHOP</a>
+    <nav aria-label="Hoofdmenu">
+      <a href="#tarieven">Tarieven</a>
+      <a href="#producten">Producten</a>
+      <a href="#nieuws">Nieuws</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="https://bjootify.com/salon/265d46d5-1364-42ad-b5e0-075f848fd06f" target="_blank" rel="noopener">Afspraak maken</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <h1>Al 30 jaar jouw kapper in <em>Venlo en Blerick</em></h1>
+      <p class="lead">Een goed gesprek, een luisterend oor en een lekker kopje koffie. Dat hoort bij een bezoek aan ons team.</p>
+      <div class="cta">
+        <a class="btn" href="https://bjootify.com/salon/265d46d5-1364-42ad-b5e0-075f848fd06f" target="_blank" rel="noopener">Afspraak maken</a>
+        <a class="btn ghost" href="tel:+31773871970">Bel 077-3871970</a>
+      </div>
+    </div>
+    <div class="arch" role="img" aria-label="Plek voor salonfoto">
+      Plaats hier de salonfoto
+      <div class="halo" role="status" aria-live="polite">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/></svg>
+        <p><span class="s" id="stat"></span><span class="t" id="stat2"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <section id="over" style="padding-top:0">
+    <div class="wrap two">
+      <div class="arch" style="aspect-ratio:4/5;border-radius:999px 999px 24px 24px;place-items:center;padding:0">Plaats hier de teamfoto</div>
+      <div>
+        <h2>Dienstverlening met een glimlach</h2>
+        <p>John's Hairshop is een van de langstzittende kapsalons in Blerick. Wij zijn een kundig en hecht team dat betrokken is bij zijn klanten.</p>
+        <p>Een goed gesprek, een luisterend oor en een lekker kopje koffie vinden wij belangrijk. Het is niet voor niets dat onze klanten met een glimlach naar buiten gaan en iedere keer weer met plezier binnenlopen.</p>
+        <div class="vals"><span>Communicatie</span><span>Betrokkenheid</span><span>Vertrouwen</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tarieven" style="background:var(--surface)">
+    <div class="wrap">
+      <h2>Tarieven</h2>
+      <div class="menu">
+        <div>
+          <h3>Heren en kinderen</h3>
+          <ul>
+            <li>Knippen kind t/m 12 jr<i></i><b>€ 28,50</b></li>
+            <li>Knippen heren<i></i><b>€ 36,00</b></li>
+            <li>Wassen knippen heren<i></i><b>€ 38,50</b></li>
+            <li>Knippen baard<i></i><b>€ 18,50</b></li>
+            <li>Tondeuse<i></i><b>€ 18,50</b></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Dames</h3>
+          <ul>
+            <li>Knippen dames<i></i><b>€ 38,50</b></li>
+            <li>Wassen, knippen, drogen blazen<i></i><b>€ 45,50</b></li>
+            <li>Wassen, knippen, blowen / style<i></i><b>€ 52,50</b></li>
+            <li>Wassen, knippen, föhnen vanaf<i></i><b>€ 59,50</b></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Kleur en verzorging</h3>
+          <ul>
+            <li>Wassen föhnen vanaf<i></i><b>€ 39,00</b></li>
+            <li>Verven vanaf<i></i><b>€ 45,50</b></li>
+            <li>Permanenten vanaf<i></i><b>€ 69,50</b></li>
+            <li>Extensions<i></i><b>op aanvraag</b></li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Studenten en jeugd t/m 17 jaar krijgen 10% korting.</p>
+    </div>
+  </section>
+
+  <section id="producten" class="band">
+    <div class="wrap two" style="grid-template-columns:1fr 1fr">
+      <p class="keune" aria-hidden="true">Keune</p>
+      <div>
+        <h2>Trotse ambassadeur van Keune</h2>
+        <p>Keune maakt al sinds 1922 haarproducten voor professionals en is voor ons zoveel meer dan een leverancier. Het is onze familie. Hoogwaardige, eerlijke producten met een oer-Hollandse no-nonsense mentaliteit.</p>
+        <p>De producten zijn in onze salon verkrijgbaar en online te bestellen. Loop gerust binnen voor advies bij jouw haartype en hoofdhuid.</p>
+        <p style="margin-top:28px"><a class="btn" href="#contact">Kom langs voor advies</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="nieuws">
+    <div class="wrap" style="text-align:center">
+      <h2>Nieuws</h2>
+      <p style="max-width:30em;margin:0 auto 32px;color:var(--muted)">Acties, nieuwe hoofdstukken en voor-en-nafoto's delen we op Facebook.</p>
+      <a class="btn ghost" href="#" target="_blank" rel="noopener">Volg ons op Facebook</a>
+    </div>
+  </section>
+
+  <section id="contact" style="background:var(--surface)">
+    <div class="wrap">
+      <h2>Direct een afspraak maken?</h2>
+      <div class="contact">
+        <div>
+          <h3>Adres</h3>
+          <p>Kloosterstraat 37<br>5921 HB Venlo</p>
+          <p><a href="tel:+31773871970">077-3871970</a></p>
+          <p style="margin-top:24px"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Kloosterstraat+37+5921+HB+Venlo" target="_blank" rel="noopener">Route plannen</a></p>
+        </div>
+        <div>
+          <h3>Openingstijden</h3>
+          <table id="hours" aria-label="Openingstijden">
+            <tr data-d="1"><td>Maandag</td><td>Gesloten</td></tr>
+            <tr data-d="2"><td>Dinsdag</td><td>08:30 – 17:30</td></tr>
+            <tr data-d="3"><td>Woensdag</td><td>08:30 – 17:30</td></tr>
+            <tr data-d="4"><td>Donderdag</td><td>08:30 – 17:30</td></tr>
+            <tr data-d="5"><td>Vrijdag</td><td>08:30 – 17:30</td></tr>
+            <tr data-d="6"><td>Zaterdag</td><td>08:00 – 16:00</td></tr>
+            <tr data-d="0"><td>Zondag</td><td>Gesloten</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3>Afspraken en annuleren</h3>
+          <p>Wij nemen voor elke klant voldoende tijd. Daarom vragen wij vriendelijk om een afspraak te maken. Kun je niet komen? Meld je dan tijdig af, dan bieden wij de plek aan iemand anders aan.</p>
+          <p style="margin-top:24px"><a class="btn" href="https://bjootify.com/salon/265d46d5-1364-42ad-b5e0-075f848fd06f" target="_blank" rel="noopener">Online afspraak</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">J<b>O</b>HNS HAIRSHOP</span>
+    Kloosterstraat 37, 5921 HB Venlo · <a href="tel:+31773871970">077-3871970</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var sched={0:null,1:null,2:[510,1050],3:[510,1050],4:[510,1050],5:[510,1050],6:[480,960]};
+  var names={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  var dn=['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
+  var p;
+  try{p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Amsterdam',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date())}catch(e){return}
+  var g=function(t){return p.filter(function(x){return x.type===t})[0].value};
+  var d=names[g('weekday')],m=parseInt(g('hour'),10)%24*60+parseInt(g('minute'),10);
+  var row=document.querySelector('#hours tr[data-d="'+d+'"]');if(row)row.className='today';
+  var h=sched[d],s=document.getElementById('stat'),s2=document.getElementById('stat2');
+  var fmt=function(x){return ('0'+Math.floor(x/60)).slice(-2)+':'+('0'+x%60).slice(-2)};
+  if(h&&m>=h[0]&&m<h[1]){s.innerHTML='<span class="dot on"></span>Nu open';s2.textContent='Tot '+fmt(h[1])+' uur'}
+  else{
+    var off=0,next=null;
+    if(h&&m<h[0]){next=h[0]}
+    else{for(var i=1;i<=7;i++){var k=(d+i)%7;if(sched[k]){next=sched[k][0];off=i;break}}}
+    s.innerHTML='<span class="dot"></span>Gesloten';
+    s2.textContent='Open '+(off===0?'vandaag':dn[(d+off)%7])+' '+fmt(next);
+  }
+})();
+</script>
+</body>
+</html>
